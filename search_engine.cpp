@@ -23,7 +23,6 @@ auto launch() {
     }
     if (!fileAnswers.is_open()) fstream answers("answers.json");
     else fileAnswers.close();;
-   
 }
 
 class ConverterJSON {
