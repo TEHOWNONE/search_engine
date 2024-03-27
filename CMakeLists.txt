@@ -8,7 +8,7 @@ include(FetchContent)
 
 FetchContent_Declare(googletest URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip)
 
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} googletest/include)
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
@@ -16,11 +16,14 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_subdirectory(nlohmann_json)
+add_subdirectory(nlohmann_json googletest)
 
 add_executable (search_engine "search_engine.cpp" "search_engine.h")
 
-target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json gtest_main)
+add_test(NAME testfoo
+         COMMAND testfoo)
+
+target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json gtest)
 
 include(GoogleTest)
 

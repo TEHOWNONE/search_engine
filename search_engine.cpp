@@ -1,7 +1,9 @@
 ﻿#include "search_engine.h"
 
-TEST(sample_test_case, sample_test)
+TEST(testfoo, testfoo)
 {
+    ::testing::InitGoogleTest();
+    int ret = RUN_ALL_TESTS();
     EXPECT_EQ(1, 1);
 }
 
