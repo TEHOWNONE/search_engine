@@ -1,0 +1,5 @@
+if(EXISTS "C:/VsProg/search_engine/out/build/x64-debug/search_engine[1]_tests.cmake")
+  include("C:/VsProg/search_engine/out/build/x64-debug/search_engine[1]_tests.cmake")
+else()
+  add_test(search_engine_NOT_BUILT search_engine_NOT_BUILT)
+endif()
