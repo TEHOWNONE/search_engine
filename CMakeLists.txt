@@ -20,8 +20,7 @@ add_subdirectory(nlohmann_json googletest)
 
 add_executable (search_engine "search_engine.cpp" "search_engine.h")
 
-add_test(NAME testfoo
-         COMMAND testfoo)
+add_test(NAME testt_search_engine COMMAND search_engine WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json gtest)
 
