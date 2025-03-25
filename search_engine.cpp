@@ -71,8 +71,7 @@ public:
         return requests;
     };
 
-    /*void putAnswers() {
-    };*/
+    //void putAnswers()
 };
 
 int main(int argc, char** argv)
@@ -81,8 +80,4 @@ int main(int argc, char** argv)
     ConverterJSON converter;
     ::testing::InitGoogleTest(&argc, argv);
       return RUN_ALL_TESTS();
-    //converter.GetTextDocuments();
-    //converter.GetResponsesLimit();
-    //converter.GetRequests(); 
-    //converter.putAnswers();
 };
