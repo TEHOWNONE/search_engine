@@ -1,12 +1,4 @@
-﻿#include "search_engine.h"
-
-TEST(testfoo, testfoo)
-{
-    ::testing::InitGoogleTest();
-    int ret = RUN_ALL_TESTS();
-    EXPECT_EQ(1, 1);
-}
-
+﻿#include "include\search_engine.h"
 
 auto launch() {
     nlohmann::json j{}; 

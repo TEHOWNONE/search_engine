@@ -16,9 +16,9 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_subdirectory(nlohmann_json googletest)
+add_subdirectory(nlohmann_json googletest) 
 
-add_executable (search_engine "search_engine.cpp" "search_engine.h")
+add_subdirectory(src tests)
 
 add_test(NAME testt_search_engine COMMAND search_engine WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
