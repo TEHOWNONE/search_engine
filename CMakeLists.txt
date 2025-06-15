@@ -16,13 +16,13 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
+cmake_policy(SET CMP0079 NEW)
+
 add_subdirectory(nlohmann_json googletest) 
 
-add_subdirectory(src tests)
+add_subdirectory(src tests include)
 
 add_test(NAME testt_search_engine COMMAND search_engine WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json gtest)
 
 include(GoogleTest)
 

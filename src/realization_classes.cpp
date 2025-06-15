@@ -1,10 +1,10 @@
-﻿#include "include\search_engine.h"
+#include "search_engine.h"
 
-auto launch() {
-    nlohmann::json j{}; 
+int launch() {
+    nlohmann::json j{};
     fstream fileConfig("config.json");
     fstream fileAnswers("answers.json", ios::out);
-    
+
     try {
         if (!fileConfig.is_open()) throw "config file is missing";
         fileConfig >> j;
@@ -35,7 +35,7 @@ public:
             files.push_back(j["files"][i]);
         };
 
-        return files; 
+        return files;
     };
 
     int GetResponsesLimit() {
@@ -64,12 +64,4 @@ public:
     };
 
     //void putAnswers()
-};
-
-int main(int argc, char** argv)
-{
-    launch();
-    ConverterJSON converter;
-    ::testing::InitGoogleTest(&argc, argv);
-      return RUN_ALL_TESTS();
 };

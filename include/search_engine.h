@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 #include <iostream>
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -7,8 +6,9 @@
 #include <vector>
 #include "gtest/gtest.h" 
 #include <gtest/gtest.h>
+using namespace std;
 
-auto launch();
+int launch();
 
 class ConverterJSON {
 public:
@@ -20,5 +20,3 @@ public:
 
     vector<string> GetRequests();
 };
-
-using namespace std;
